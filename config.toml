@@ -67,7 +67,12 @@ logoHomeLink = "/"
 # alt = "Your example logo alt text"
 
 # And you can even create generic menu
-#[[menu.main]]
-#identifier = "blog"
-#name = "Blog"
-#url = "/posts"
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about"
+
+[[menu.main]]
+identifier = "blog"
+name = "Blog"
+url = "/posts"
