@@ -1,0 +1,29 @@
+{{ define "main" }}
+<body>
+  <!--
+    <div>
+      <a href="#release-date">RD</a>
+    </div>
+    <p>
+      <a href="#chrono">C</a>
+    </div>
+  -->
+
+  <div
+    style="
+      height: 100vh;
+      width: 95vw;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+    "
+  >
+    <div>That's me!</div>
+  </div>
+  <div id="portfolio">
+    {{ range .Site.Data.portfolio.list }} {{ partial "project-thumbnail.html" .
+    }} {{ end }}
+  </div>
+</body>
+{{ end }}
