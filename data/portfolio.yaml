@@ -5,21 +5,21 @@ list:
     use cases (form responses, table with header, matrix). It is available in crates.io and
     as an npm package.'
     tags: ["rust", "tera", "oss", "git", "github", "wasm", "crates.io", "npm"]
-    repository: "repository0"
+    code: "repository0"
   
   - name: "T2HTemplates"
     readme: "\"PDF ready\" Tera templates ready to be used with Table to HTML. Table to HTML will
     render these templates to HTML, placing the provided table's cell's values in the appropriate
     places. Use your browser to generate PDF files for your needs."
     tags: ["rust", "tera", "html", "css", "oss", "git", "github"]
-    repository: "repository1"
+    code: "repository1"
 
   - name: "csv2html.pages.dev"
     readme: 'An easy to use web app to transform your csv files into html. Chose your use
     case - from form responses to general matrices.'
     tags: ["table-to-html", "html", "css", "javascript", "responsive", "web", "svelte", "svelte-kit", "cloudflare-pages", "oss", "git", "github"]
-    repository: "repository2"
-    website: "website2"
+    code: "repository2"
+    link: "website2"
 
   - name: "Cubeat"
     readme: "A game I got third place in a Hackathon with! It's an endless hypercasual whose
@@ -34,8 +34,15 @@ list:
     video: "video"
 
   - name: "1n Order"
-    readme: "A collection of websites with the chronological order to watch popular movie/tv franchises.
+    readme: "A collection of websites with the chronological order of popular movie/tv franchises.
     The MCU, Star Wars, How to Train your Dragon are examples."
     tags: ["html", "css", "javascript", "alpinejs", "hugo", "responsive", "web", "cinema"]
-    repository: "repository2"
-    website: "website2"
+    code: "repository2"
+    link: "website2"
+
+  - name: "Valups"
+    readme: "A collection of websites with the chronological order of popular movie/tv franchises.
+    The MCU, Star Wars, How to Train your Dragon are examples."
+    tags: ["html", "css", "javascript", "alpinejs", "hugo", "responsive", "web", "cinema"]
+    code: "repository2"
+    link: "website2"
