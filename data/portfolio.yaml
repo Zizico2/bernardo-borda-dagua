@@ -1,0 +1,48 @@
+list:
+  - name: "Table to HTML"
+    readme: 'Provide your table, (row/column majored matrix) and we make it available in
+    your Tera HTML template. Our sister project (T2HTemplates) provides templates for common
+    use cases (form responses, table with header, matrix). It is available in crates.io and
+    as an npm package.'
+    tags: ["rust", "tera", "oss", "git", "github", "wasm", "crates.io", "npm"]
+    code: "repository0"
+  
+  - name: "T2HTemplates"
+    readme: "\"PDF ready\" Tera templates ready to be used with Table to HTML. Table to HTML will
+    render these templates to HTML, placing the provided table's cell's values in the appropriate
+    places. Use your browser to generate PDF files for your needs."
+    tags: ["rust", "tera", "html", "css", "oss", "git", "github"]
+    code: "repository1"
+
+  - name: "csv2html.pages.dev"
+    readme: 'An easy to use web app to transform your csv files into html. Chose your use
+    case - from form responses to general matrices.'
+    tags: ["table-to-html", "html", "css", "javascript", "responsive", "web", "svelte", "svelte-kit", "cloudflare-pages", "oss", "git", "github"]
+    code: "repository2"
+    link: "website2"
+
+  - name: "Cubeat"
+    readme: "A game I got third place in a Hackathon with! It's an endless hypercasual whose
+    objective is to rotate a cube to match its base's color with the color of the playground."
+    tags: ["godot", "finite-state-machine", "shader", "mobile", "ios", "android"]
+    video: "video"
+
+  - name: "Amaze"
+    readme: "A game I got first place in a Hackathon with! It's a maze. You are a ball.
+    Rotate the world to make the ball fall through the right path."
+    tags: ["godot", "physics", "menu-design", "mobile", "ios", "android"]
+    video: "video"
+
+  - name: "1n Order"
+    readme: "A collection of websites with the chronological order of popular movie/tv franchises.
+    The MCU, Star Wars, How to Train your Dragon are examples."
+    tags: ["html", "css", "javascript", "alpinejs", "hugo", "responsive", "web", "cinema"]
+    code: "repository2"
+    link: "website2"
+
+  - name: "Valups"
+    readme: "A collection of websites with the chronological order of popular movie/tv franchises.
+    The MCU, Star Wars, How to Train your Dragon are examples."
+    tags: ["html", "css", "javascript", "alpinejs", "hugo", "responsive", "web", "cinema"]
+    code: "repository2"
+    link: "website2"
