@@ -32,11 +32,18 @@
 }
 
 #portfolio {
+  --vertical-margin: 13%;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 40px;
+  margin-top: var(--vertical-margin);
+  margin-bottom: var(--vertical-margin);
+}
+
+#portfolio > h1 {
+  font-size: 2.3em;
 }
 
 .links {
