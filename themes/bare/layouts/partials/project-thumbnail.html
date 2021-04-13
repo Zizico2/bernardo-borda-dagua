@@ -2,16 +2,46 @@
   <h2>{{.name}}</h2>
   <div class="links">
     {{ if isset . "link" }}
-    <a style="display: inline-block" href="{{.link}}" target="_blank">
-      <img src="/portfolio_logos/link.svg" height="25px" width="25px" />
+    <a
+      rel="noopener"
+      style="display: contents"
+      href="{{.link}}"
+      target="_blank"
+    >
+      <img
+        src="/portfolio_logos/link.svg"
+        height="25px"
+        width="25px"
+        alt="Link"
+      />
     </a>
     {{ end }} {{ if isset . "code" }}
-    <a style="display: inline-block" href="{{.code}}" target="_blank">
-      <img src="/portfolio_logos/code.svg" height="25px" width="25px" />
+    <a
+      rel="noopener"
+      style="display: contents"
+      href="{{.code}}"
+      target="_blank"
+    >
+      <img
+        src="/portfolio_logos/code.svg"
+        height="25px"
+        width="25px"
+        alt="Code"
+      />
     </a>
     {{ end }} {{ if isset . "video" }}
-    <a style="display: inline-block" href="{{.video}}" target="_blank">
-      <img src="/portfolio_logos/video.svg" height="25px" width="25px" />
+    <a
+      rel="noopener"
+      style="display: contents"
+      href="{{.video}}"
+      target="_blank"
+    >
+      <img
+        src="/portfolio_logos/video.svg"
+        height="25px"
+        width="25px"
+        alt="Video"
+      />
     </a>
     {{ end }}
   </div>
