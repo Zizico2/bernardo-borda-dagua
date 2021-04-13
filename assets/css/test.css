@@ -32,18 +32,30 @@
 }
 
 #portfolio {
-  --vertical-margin: 13%;
+  --vertical-margin: 9%;
   width: 100%;
+  margin-top: var(--vertical-margin);
+  margin-bottom: var(--vertical-margin);
+  text-align: center;
+}
+
+#portfolio > ul {
+  text-align: initial;
   display: flex;
   flex-direction: column;
   align-items: center;
-  row-gap: 40px;
-  margin-top: var(--vertical-margin);
-  margin-bottom: var(--vertical-margin);
+  row-gap: 30px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+#portfolio > ul > li {
+  display: contents;
 }
 
 #portfolio > h1 {
   font-size: 2.3em;
+  margin-bottom: 50px;
 }
 
 .links {

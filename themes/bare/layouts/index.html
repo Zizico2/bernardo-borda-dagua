@@ -21,13 +21,15 @@
   >
     <div>That's me!</div>
   </div>
-  <section id="portfolio">
+  <section id="portfolio" name="portfolio">
     <h1>My Projects</h1>
-    {{ range .Site.Data.portfolio.list }}
-    <!-- -->
-    {{ partial "project-thumbnail.html" .}}
-    <!-- -->
-    {{ end }}
+    <ul>
+      {{ range .Site.Data.portfolio.list }}
+      <!---->
+      <li>{{ partial "project-thumbnail.html" .}}</li>
+      <!---->
+      {{ end }}
+    </ul>
   </section>
 </body>
 {{ end }}
