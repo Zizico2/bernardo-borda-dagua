@@ -389,7 +389,15 @@
         }
       }
     </style>
-    <link rel="stylesheet" type="text/css" href="/global.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/global.css" />-->
+    {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
+    "./postcss.config.js") | resources.Minify | resources.Fingerprint "sha512"
+    }}
+    <link
+      rel="stylesheet"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+    />
   </head>
   {{ block "main" . }}
   <!-- The part of the page that begins to differ between templates -->
