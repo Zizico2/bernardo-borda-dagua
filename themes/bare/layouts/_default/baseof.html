@@ -389,7 +389,21 @@
         }
       }
     </style>
-    <link rel="stylesheet" type="text/css" href="/global.css" />
+    <!--<link rel="stylesheet" type="text/css" href="/global.css" />-->
+
+    {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
+    "./postcss.config.js") | resources.Minify | resources.Fingerprint "sha512"
+    }}
+
+    <!--<link
+      rel="stylesheet"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+    />-->
+    <style>
+      {{ $style.Content | safeCSS }}
+    </style>
+    <title>Bernardo Borda d'Água</title>
   </head>
   {{ block "main" . }}
   <!-- The part of the page that begins to differ between templates -->
@@ -401,6 +415,7 @@
         style="text-decoration: none; color: rgb(170, 170, 170)"
         href="https://www.freepik.com"
         target="_blank"
+        rel="noopener"
         title="Freepik"
         >Freepik</a
       >
@@ -409,6 +424,7 @@
         style="text-decoration: none; color: rgb(170, 170, 170)"
         href="https://www.flaticon.com/"
         target="_blank"
+        rel="noopener"
         title="Flaticon"
         >flaticon.com</a
       >
