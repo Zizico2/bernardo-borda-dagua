@@ -11,7 +11,42 @@
       align-items: center;
     "
   >
-    <h1>Bernardo Borda d'Água</h1>
+    <figure style="margin: 0px; text-align: center">
+      {{ $image := resources.Get "images/portrait.jpg" }}
+      <!---->
+      {{ $image_100 := $image.Resize "100x" }}
+      <!---->
+      {{ $image_300 := $image.Resize "300x" }}
+      <!---->
+      {{ $image_600 := $image.Resize "600x" }}
+      <!---->
+      {{ $image_900 := $image.Resize "900x" }}
+      <!---->
+      {{ $image_1200 := $image.Resize "1200x" }}
+      <!---->
+      {{ $image_1400 := $image.Resize "1400x" }}
+
+      <img
+        style="
+          display: inline-block;
+          border-radius: 50%;
+          width: 35vw;
+          max-width: 200px;
+          margin: 20px;
+        "
+        srcset="{{ $image_100.Permalink }} 100w,
+                {{ $image_300.Permalink }} 300w,
+                {{ $image_600.Permalink }} 600w,
+                {{ $image_900.Permalink }} 900w,
+                {{ $image_1200.Permalink }} 1200w,
+                {{ $image_1200.Permalink }} 1200w"
+        alt="Portrait"
+      />
+      <figcaption>
+        <h1 style="margin: 15px">Bernardo Borda d'Água</h1>
+      </figcaption>
+    </figure>
+
     <div style="display: flex; flex-direction: row; gap: 3px">
       <a
         class="chip"
@@ -43,6 +78,12 @@
         Twitter
       </a>
     </div>
+    <img
+    style="position: absolute; bottom: 30px"
+      width="50"
+      height="50"
+      src="/portfolio_logos/arrow-down-sign-to-navigate.svg"
+    />
   </section>
   <section id="portfolio" name="portfolio">
     <h1>My Projects</h1>
