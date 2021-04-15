@@ -10,8 +10,15 @@
       "src": "favicon.svg",
       "sizes": "8x8 16x16 32x32 48x48 72x72 96x96 128x128 256x256",
       "type": "image/svg+xml",
-      "purpose": "any maskable monochrome"
+      "purpose": "any"
     },
+    {
+      "src": "favicon_maskable.svg",
+      "sizes": "8x8 16x16 32x32 48x48 72x72 96x96 128x128 256x256",
+      "type": "image/svg+xml",
+      "purpose": "maskable"
+    },
+
     {
       "src": "favicon.png",
       "sizes": "512x512",
