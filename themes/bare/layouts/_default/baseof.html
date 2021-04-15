@@ -26,34 +26,35 @@
     <style>
       {{ $style_inline.Content | safeCSS }}
     </style>
+    <!---->
     <title>Bernardo Borda d'Água</title>
   </head>
-  <main>{{ block "main" . }} {{ end }}</main>
-  <footer style="min-height: 10rem; color: white; background-color: black">
-    <div>
-      Icons made by
-      <a
-        style="text-decoration: none; color: rgb(170, 170, 170)"
-        href="https://www.freepik.com"
-        target="_blank"
-        rel="noopener"
-        title="Freepik"
-        >Freepik</a
-      >
-      from
-      <a
-        style="text-decoration: none; color: rgb(170, 170, 170)"
-        href="https://www.flaticon.com/"
-        target="_blank"
-        rel="noopener"
-        title="Flaticon"
-        >flaticon.com</a
-      >
-    </div>
-    <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
-    <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
-
-    <!---->
+  <body>
+    <main>{{ block "main" . }} {{ end }}</main>
+    <footer style="min-height: 10rem; color: white; background-color: black">
+      <div>
+        Icons made by
+        <a
+          style="text-decoration: none; color: rgb(170, 170, 170)"
+          href="https://www.freepik.com"
+          target="_blank"
+          rel="noopener"
+          title="Freepik"
+          >Freepik</a
+        >
+        from
+        <a
+          style="text-decoration: none; color: rgb(170, 170, 170)"
+          href="https://www.flaticon.com/"
+          target="_blank"
+          rel="noopener"
+          title="Flaticon"
+          >flaticon.com</a
+        >
+      </div>
+      <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
+      <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
+    </footer>
     {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
     "./postcss.config.js") | resources.Fingerprint "sha512" }}
     <link
@@ -71,5 +72,12 @@
       />
     </noscript>
     <!---->
-  </footer>
+    <!-- Cloudflare Web Analytics -->
+    <script
+      defer
+      src="https://static.cloudflareinsights.com/beacon.min.js"
+      data-cf-beacon='{"token": "1c88640157324d1c9e5e4adb1a7a5a9f"}'
+    ></script>
+    <!-- End Cloudflare Web Analytics -->
+  </body>
 </html>
