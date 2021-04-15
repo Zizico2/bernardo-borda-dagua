@@ -1,0 +1,41 @@
+{
+  "background_color": "#FFFFFF",
+  "theme_color": "#000000",
+  "categories": ["business", "education", "photo"],
+  "description": "I'm a developer. My name is Bernardo Borda d'Água. Take a look at what I do!",
+  "dir": "auto",
+  "display": "browser",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "8x8 16x16 32x32 48x48 72x72 96x96 128x128 256x256",
+      "type": "image/svg+xml",
+      "purpose": "any maskable monochrome"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "lang": "en-US",
+  "name": "Bernardo Borda d'Água",
+  "orientation": "natural",
+  "prefer_related_applications": false,
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "My Projects",
+      "description": "A list of projects developed by me!",
+      "url": "/#"
+    }
+  ],
+  "short_name": "Bernardo",
+  "start_url": "./",
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=cheeaun.hackerweb"
+    }
+  ]
+}
