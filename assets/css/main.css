@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .project-thumbnail {
   width: 73%;
   max-width: 550px;
@@ -20,25 +24,12 @@
   flex-wrap: wrap;
   gap: 7px;
 }
-
-.chip {
-  --vertical-padding: 5px;
-  --line-height: 14px;
-
-  font-size: 0.85em;
-  background: rgb(48, 48, 48);
-  color: rgb(235, 235, 235);
-  padding: var(--vertical-padding) 12px;
-  line-height: var(--line-height);
-  border-radius: calc((var(--line-height) + var(--vertical-padding) * 2) / 2);
-}
-
 #portfolio {
-  --vertical-margin: 9%;
-
+  --vertical-margin: 4vh;
+  margin: 0;
   width: 100%;
-  margin-top: var(--vertical-margin);
-  margin-bottom: var(--vertical-margin);
+  padding-top: var(--vertical-margin);
+  padding-bottom: var(--vertical-margin);
   text-align: center;
 }
 
@@ -50,6 +41,8 @@
   row-gap: 30px;
   list-style-type: none;
   padding-left: 0;
+  margin-bottom: 70px;
+  margin-top: 70px;
 }
 
 #portfolio > ul > li {
@@ -58,12 +51,11 @@
 
 #portfolio > h1 {
   font-size: 2.3em;
-  margin-bottom: 50px;
+  margin-top: 0;
 }
 
 .links {
   --vertical-margin: 5px;
-
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;

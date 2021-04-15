@@ -18,14 +18,6 @@
     resources.PostCSS (dict "config" "./postcss.config.js") |
     resources.Fingerprint "sha512" }}
     <!---->
-    {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
-    "./postcss.config.js") | resources.Fingerprint "sha512" }}
-
-    <link
-      rel="stylesheet"
-      href="{{ $style.RelPermalink }}"
-      integrity="{{ $style.Data.Integrity }}"
-    />
 
     <style>
       {{ $style_inline.Content | safeCSS }}
@@ -56,5 +48,24 @@
     </div>
     <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
     <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
+
+    <!---->
+    {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
+    "./postcss.config.js") | resources.Fingerprint "sha512" }}
+    <link
+      rel="preload"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+      as="style"
+      onload='this.onload = null;this.rel = "stylesheet";'
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="{{ $style.RelPermalink }}"
+        integrity="{{ $style.Data.Integrity }}"
+      />
+    </noscript>
+    <!---->
   </footer>
 </html>

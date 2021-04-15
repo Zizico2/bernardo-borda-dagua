@@ -3,7 +3,7 @@
 body {
   background-color: white;
 }
-/*
+
 [style*="--aspect-ratio"] > :first-child {
   width: 100%;
 }
@@ -26,4 +26,22 @@ body {
     height: 100%;
   }
 }
-*/
+
+#down-arrow {
+  position: absolute;
+  bottom: 20px;
+  width: 50px;
+  height: 50px;
+}
+
+.chip {
+  --vertical-padding: 5px;
+  --line-height: 14px;
+
+  font-size: 0.85em;
+  background: rgb(48, 48, 48);
+  color: rgb(235, 235, 235);
+  padding: var(--vertical-padding) 12px;
+  line-height: var(--line-height);
+  border-radius: calc((var(--line-height) + var(--vertical-padding) * 2) / 2);
+}
