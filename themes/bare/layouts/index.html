@@ -1,47 +1,47 @@
 {{ define "main" }}
-<body>
-  <section
-    name="bernardo_borda_dagua"
-    style="
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-    "
-  >
-    <figure style="margin: 0px; text-align: center">
-      {{ $image := resources.Get "images/portrait.jpg" }}
-      <!---->
-      {{ $image_100 := $image.Resize "100x" }}
-      <!---->
-      {{ $image_300 := $image.Resize "300x" }}
-      <!---->
-      {{ $image_500 := $image.Resize "500x" }}
-      <!---->
-      {{ $image_800 := $image.Resize "800x" }}
-      <!---->
-      {{ $image_1000 := $image.Resize "1000x" }}
-      <!---->
-      {{ $image_1200 := $image.Resize "1200x" }}
-      <!---->
-      {{ $image_1400 := $image.Resize "1400x" }}
-      <!---->
-      {{ $image_1600 := $image.Resize "1600x" }}
 
-      <div
-        style="
-          --aspect-ratio: 1/1;
-          display: inline-block;
-          width: 35vw;
-          max-width: 200px;
-          margin: 20px;
-        "
-      >
-        <img
-          style="display: inline-block; border-radius: 50%"
-          srcset="{{ $image_100.Permalink }} 100w,
+<section
+  name="bernardo_borda_dagua"
+  style="
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  "
+>
+  <figure style="margin: 0px; text-align: center">
+    {{ $image := resources.Get "images/portrait.jpg" }}
+    <!---->
+    {{ $image_100 := $image.Resize "100x" }}
+    <!---->
+    {{ $image_300 := $image.Resize "300x" }}
+    <!---->
+    {{ $image_500 := $image.Resize "500x" }}
+    <!---->
+    {{ $image_800 := $image.Resize "800x" }}
+    <!---->
+    {{ $image_1000 := $image.Resize "1000x" }}
+    <!---->
+    {{ $image_1200 := $image.Resize "1200x" }}
+    <!---->
+    {{ $image_1400 := $image.Resize "1400x" }}
+    <!---->
+    {{ $image_1600 := $image.Resize "1600x" }}
+
+    <div
+      style="
+        --aspect-ratio: 1/1;
+        display: inline-block;
+        width: 35vw;
+        max-width: 200px;
+        margin: 20px;
+      "
+    >
+      <img
+        style="display: inline-block; border-radius: 50%"
+        srcset="{{ $image_100.Permalink }} 100w,
                 {{ $image_300.Permalink }} 300w,
                 {{ $image_500.Permalink }} 500w,
                 {{ $image_800.Permalink }} 800w,
@@ -49,71 +49,71 @@
                 {{ $image_1200.Permalink }} 1200w,
                 {{ $image_1400.Permalink }} 1400w,
                 {{ $image_1600.Permalink }} 1600w"
-          alt="Portrait"
-        />
-      </div>
-      <figcaption>
-        <h1 style="margin: 15px">Bernardo Borda d'Água</h1>
-      </figcaption>
-    </figure>
-
-    <div style="display: flex; flex-direction: row; gap: 3px">
-      <a
-        class="chip"
-        rel="noopener"
-        style="text-decoration: none"
-        target="_blank"
-        href="https://www.linkedin.com/in/bernardo-agua"
-      >
-        LinkedIn
-      </a>
-      <a
-        class="chip"
-        rel="noopener"
-        style="text-decoration: none"
-        href="https://github.com/Zizico2"
-      >
-        GitHub
-      </a>
-      <a
-        class="chip"
-        rel="noopener"
-        style="text-decoration: none"
-        href="https://gitlab.com/Zizico2"
-      >
-        GitLab
-      </a>
-      <a
-        class="chip"
-        rel="noopener"
-        style="text-decoration: none"
-        href="https://twitter.com/bernardo_agua"
-      >
-        Twitter
-      </a>
+        alt="Portrait"
+      />
     </div>
-    {{ $arrow := resources.Get "svg/arrow-down-sign-to-navigate.svg" }}
-    <!---->
-    {{ $arrow := $arrow | resources.Minify }}
-    <!--<img
+    <figcaption>
+      <h1 style="margin: 15px">Bernardo Borda d'Água</h1>
+    </figcaption>
+  </figure>
+
+  <div style="display: flex; flex-direction: row; gap: 3px">
+    <a
+      class="chip"
+      rel="noopener"
+      style="text-decoration: none"
+      target="_blank"
+      href="https://www.linkedin.com/in/bernardo-agua"
+    >
+      LinkedIn
+    </a>
+    <a
+      class="chip"
+      rel="noopener"
+      style="text-decoration: none"
+      href="https://github.com/Zizico2"
+    >
+      GitHub
+    </a>
+    <a
+      class="chip"
+      rel="noopener"
+      style="text-decoration: none"
+      href="https://gitlab.com/Zizico2"
+    >
+      GitLab
+    </a>
+    <a
+      class="chip"
+      rel="noopener"
+      style="text-decoration: none"
+      href="https://twitter.com/bernardo_agua"
+    >
+      Twitter
+    </a>
+  </div>
+  {{ $arrow := resources.Get "svg/arrow-down-sign-to-navigate.svg" }}
+  <!---->
+  {{ $arrow := $arrow | resources.Minify }}
+  <!--<img
       style="position: absolute; bottom: 30px"
       width="50"
       height="50"
       src="/portfolio_logos/arrow-down-sign-to-navigate.svg"
     />-->
-    <a style="display: contents" href="#portfolio" aria-label="Scroll down">
-      {{$arrow.Content | safeHTML}}
-    </a>
-  </section>
-  <section id="portfolio" name="portfolio">
-    <h1>My Projects</h1>
-    <ul>
-      {{ range .Site.Data.portfolio.list }}
-      <!---->
-      <li>{{ partial "project-thumbnail.html" .}}</li>
-      <!---->
-      {{ end }}
-    </ul>
-  </section>
-</body>
+  <a style="display: contents" href="#portfolio" aria-label="Scroll down">
+    {{$arrow.Content | safeHTML}}
+  </a>
+</section>
+<section id="portfolio" name="portfolio">
+  <h1>My Projects</h1>
+  <ul>
+    {{ range .Site.Data.portfolio.list }}
+    <!---->
+    <li>{{ partial "project-thumbnail.html" .}}</li>
+    <!---->
+    {{ end }}
+  </ul>
+</section>
+
 {{ end }}
