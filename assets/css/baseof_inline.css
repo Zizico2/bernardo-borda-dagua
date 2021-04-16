@@ -45,3 +45,12 @@ body {
   line-height: var(--line-height);
   border-radius: calc((var(--line-height) + var(--vertical-padding) * 2) / 2);
 }
+
+/* apply a natural box layout model to all elements */
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}

@@ -5,6 +5,7 @@ html {
 .project-thumbnail {
   width: 73%;
   max-width: 550px;
+  min-width: 300px;
   border-radius: 7px;
   border: solid;
   border-color: black;
@@ -35,10 +36,11 @@ html {
 
 #portfolio > ul {
   text-align: initial;
-  display: flex;
-  flex-direction: column;
+  display: grid;
   align-items: center;
-  row-gap: 30px;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
   list-style-type: none;
   padding-left: 0;
   margin-bottom: 70px;
