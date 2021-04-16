@@ -2,9 +2,9 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="manifest" href="app.webmanifest" />
-    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon" />
-    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <link rel="manifest" href="/app.webmanifest" />
+    <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="theme-color" content="#000000" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
@@ -17,17 +17,33 @@
       name="keywords"
       content="personal, profile, portfolio, resumé, cv, curriculum, curriculum vitae, developer, web, html developer, css developer, rust developer, full-stack developer, web developer, backend, backend developer, rust, java, go, godot, c#, javascript, typescript, rescript, wasm"
     />
+    <title>Bernardo Borda d'Água</title>
 
+    <!-- inline styles -->
     {{ $style_inline := resources.Get "css/baseof_inline.css" |
     resources.PostCSS (dict "config" "./postcss.config.js") |
     resources.Fingerprint "sha512" }}
-    <!---->
-
     <style>
       {{ $style_inline.Content | safeCSS }}
     </style>
-    <!---->
-    <title>Bernardo Borda d'Água</title>
+    <!-- end -->
+
+    <!-- defered styles -->
+    {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
+    "./postcss.config.js") | resources.Fingerprint "sha512" }}
+    <link
+      rel="preload"
+      href="{{ $style.RelPermalink }}"
+      integrity="{{ $style.Data.Integrity }}"
+      as="style"
+      onload='this.onload = null;this.rel = "stylesheet";'
+    />
+    <!-- end -->
+    <!--
+    <script type="module" defer>
+      import hotwiredTurbo from "https://cdn.skypack.dev/pin/@hotwired/turbo@v7.0.0-beta.5-LhgiwOUjafYu3bb8VbTv/mode=imports,min/optimized/@hotwired/turbo.js";
+    </script>
+    -->
   </head>
   <body>
     <main>{{ block "main" . }} {{ end }}</main>
@@ -55,15 +71,8 @@
       <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
       <div style="padding-top: 2rem; padding-left: 11%">That's me again!</div>
     </footer>
-    {{ $style := resources.Get "css/main.css" | resources.PostCSS (dict "config"
-    "./postcss.config.js") | resources.Fingerprint "sha512" }}
-    <link
-      rel="preload"
-      href="{{ $style.RelPermalink }}"
-      integrity="{{ $style.Data.Integrity }}"
-      as="style"
-      onload='this.onload = null;this.rel = "stylesheet";'
-    />
+
+    <!-- defered styles in case JS is disabled -->
     <noscript>
       <link
         rel="stylesheet"
@@ -71,7 +80,8 @@
         integrity="{{ $style.Data.Integrity }}"
       />
     </noscript>
-    <!---->
+    <!-- end -->
+
     <!-- Cloudflare Web Analytics -->
     <script
       defer
