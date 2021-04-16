@@ -1,11 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <script
-      src="https://cdn.skypack.dev/pin/@hotwired/turbo@v7.0.0-beta.5-LhgiwOUjafYu3bb8VbTv/mode=imports,min/optimized/@hotwired/turbo.js"
-      defer
-    ></script>
-
     <meta charset="UTF-8" />
     <link rel="manifest" href="/app.webmanifest" />
     <link rel="shortcut icon" href="/favicon.svg" type="image/x-icon" />
@@ -44,6 +39,11 @@
       onload='this.onload = null;this.rel = "stylesheet";'
     />
     <!-- end -->
+    <!--
+    <script type="module" defer>
+      import hotwiredTurbo from "https://cdn.skypack.dev/pin/@hotwired/turbo@v7.0.0-beta.5-LhgiwOUjafYu3bb8VbTv/mode=imports,min/optimized/@hotwired/turbo.js";
+    </script>
+    -->
   </head>
   <body>
     <main>{{ block "main" . }} {{ end }}</main>
