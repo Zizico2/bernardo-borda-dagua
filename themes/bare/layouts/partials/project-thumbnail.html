@@ -1,60 +1,62 @@
 <div class="project-thumbnail">
-  <h2>{{.name}}</h2>
-  <div class="links">
-    {{ if isset . "link" }}
-    <a
-      rel="noopener"
-      style="display: contents"
-      href="{{.link}}"
-      target="_blank"
-    >
-      <img
-        loading="lazy"
-        alt="external_link"
-        title="External Link"
-        src="/portfolio_logos/link.svg"
-        height="25px"
-        width="25px"
-        alt="Link"
-      />
-    </a>
-    {{ end }} {{ if isset . "code" }}
-    <a
-      rel="noopener"
-      style="display: contents"
-      href="{{.code}}"
-      target="_blank"
-    >
-      <img
-        loading="lazy"
-        src="/portfolio_logos/code.svg"
-        alt="code"
-        title="Code"
-        height="25px"
-        width="25px"
-        alt="Code"
-      />
-    </a>
-    {{ end }} {{ if isset . "video" }}
-    <a
-      rel="noopener"
-      style="display: contents"
-      href="{{.video}}"
-      target="_blank"
-    >
-      <img
-        loading="lazy"
-        src="/portfolio_logos/video.svg"
-        title="Video"
-        alt="video"
-        height="25px"
-        width="25px"
-        alt="Video"
-      />
-    </a>
-    {{ end }}
+  <div>
+    <h2>{{.name}}</h2>
+    <div class="links">
+      {{ if isset . "link" }}
+      <a
+        rel="noopener"
+        style="display: contents"
+        href="{{.link}}"
+        target="_blank"
+      >
+        <img
+          loading="lazy"
+          alt="external_link"
+          title="External Link"
+          src="/portfolio_logos/link.svg"
+          height="25px"
+          width="25px"
+          alt="Link"
+        />
+      </a>
+      {{ end }} {{ if isset . "code" }}
+      <a
+        rel="noopener"
+        style="display: contents"
+        href="{{.code}}"
+        target="_blank"
+      >
+        <img
+          loading="lazy"
+          src="/portfolio_logos/code.svg"
+          alt="code"
+          title="Code"
+          height="25px"
+          width="25px"
+          alt="Code"
+        />
+      </a>
+      {{ end }} {{ if isset . "video" }}
+      <a
+        rel="noopener"
+        style="display: contents"
+        href="{{.video}}"
+        target="_blank"
+      >
+        <img
+          loading="lazy"
+          src="/portfolio_logos/video.svg"
+          title="Video"
+          alt="video"
+          height="25px"
+          width="25px"
+          alt="Video"
+        />
+      </a>
+      {{ end }}
+    </div>
+    <div>{{.readme}}</div>
   </div>
-  <div>{{.readme}}</div>
   <div class="tech">
     {{ range .tags }}
     <span class="chip">{{ . }}</span>

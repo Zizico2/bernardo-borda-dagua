@@ -3,9 +3,11 @@ html {
 }
 
 .project-thumbnail {
-  width: 73%;
-  max-width: 550px;
-  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
   border-radius: 7px;
   border: solid;
   border-color: black;
@@ -13,9 +15,9 @@ html {
   padding: 25px;
 }
 
-.project-thumbnail > h2 {
+.project-thumbnail > div > h2 {
   margin-top: 0;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .project-thumbnail > .tech {
@@ -26,25 +28,28 @@ html {
   gap: 7px;
 }
 #portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   --vertical-margin: 4vh;
   margin: 0;
   width: 100%;
   padding-top: var(--vertical-margin);
   padding-bottom: var(--vertical-margin);
-  text-align: center;
 }
 
 #portfolio > ul {
-  text-align: initial;
+  --cell-size: min(350px, 77vw);
   display: grid;
   align-items: center;
   justify-content: center;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 30px;
+  grid-template-columns: repeat(auto-fit, var(--cell-size));
+  gap: 40px;
   list-style-type: none;
   padding-left: 0;
-  margin-bottom: 70px;
-  margin-top: 70px;
+  margin: 50px;
+  width: 100%;
+  max-width: calc(var(--cell-size) * 3 + (40px * 2));
 }
 
 #portfolio > ul > li {
@@ -57,11 +62,11 @@ html {
 }
 
 .links {
-  --vertical-margin: 5px;
+  --vertical-margin: 10px;
   display: flex;
   flex-direction: row-reverse;
   flex-wrap: wrap;
   margin-top: var(--vertical-margin);
   margin-bottom: var(--vertical-margin);
-  column-gap: 8px;
+  column-gap: 15px;
 }
